@@ -85,7 +85,8 @@
                 }
                 else
                 {
-                    postfix += infix[i];
+                    //  postfix += infix[i];
+                    postfix += NumberOrNumberDecimal(infix);
                 }
             }
             while (!stack.IsEmpty)
@@ -93,6 +94,33 @@
                 postfix += stack.Pop();
             }
             return postfix;
+        }
+
+        private static string NumberOrNumberDecimal(string infix)
+        {
+            int counter = 0;
+            var number = string.Empty;
+            int i = 0;
+
+            while( infix[i] != '(' && infix[i] != ')' && infix[i] != '^' && infix[i] != '/' && infix[i] != '*' && infix[i] != '+' && infix[i] != '-')
+            {     
+                
+                  if (infix[i] == '.')
+                  {
+                     counter++;
+                  }
+
+                  if(counter > 1)
+                  {
+                    throw new Exception("Not valid wrong decimal number");
+                  }
+                  
+                 
+                  number += infix[i];
+                  i++;
+            }
+
+            return number;
         }
 
         private static bool IsOperator(char item)
