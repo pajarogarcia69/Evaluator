@@ -9,7 +9,7 @@
         }
 
         private static double Calculate(string postfix)
-        {
+         {
             var stack = new Stack<double>(100);
             for (int i = 0; i < postfix.Length; i++)
             {
@@ -95,32 +95,32 @@
             return postfix;
         }
 
-        private static string NumberOrNumberDecimal(string infix)
-        {
-            int counter = 0;
-            var number = string.Empty;
-            int i = 0;
+        //private static string NumberOrNumberDecimal(string infix)
+        //{
+        //    int counter = 0;
+        //    var number = string.Empty;
+        //    int i = 0;
 
-            while( infix[i] != '(' && infix[i] != ')' && infix[i] != '^' && infix[i] != '/' && infix[i] != '*' && infix[i] != '+' && infix[i] != '-')
-            {     
+        //    while( infix[i] != '(' && infix[i] != ')' && infix[i] != '^' && infix[i] != '/' && infix[i] != '*' && infix[i] != '+' && infix[i] != '-')
+        //    {     
                 
-                  if (infix[i] == '.')
-                  {
-                     counter++;
-                  }
+        //          if (infix[i] == '.')
+        //          {
+        //             counter++;
+        //          }
 
-                  if(counter > 1)
-                  {
-                    throw new Exception("Not valid wrong decimal number");
-                  }
+        //          if(counter > 1)
+        //          {
+        //            throw new Exception("Not valid wrong decimal number");
+        //          }
                   
                  
-                  number += infix[i];
-                  i++;
-            }
+        //          number += infix[i];
+        //          i++;
+        //    }
 
-            return number;
-        }
+        //    return number;
+        //}
 
         private static bool IsOperator(char item)
         {
