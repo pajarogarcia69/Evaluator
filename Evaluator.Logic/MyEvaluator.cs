@@ -85,8 +85,7 @@
                 }
                 else
                 {
-                    //  postfix += infix[i];
-                    postfix += NumberOrNumberDecimal(infix);
+                      postfix += infix[i];
                 }
             }
             while (!stack.IsEmpty)
